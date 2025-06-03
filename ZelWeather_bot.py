@@ -1,12 +1,13 @@
 import logging
 import requests
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-# Твои ключи
-TELEGRAM_TOKEN = '8137869405:AAGxZJH_pqNJa0_bDDcCGQVJek6Yp1-mOSg'
-WEATHER_API_KEY = 'd1de6291fd773b4a1909bccd7a2ef044'
-CITY = 'Zelenograd, RU'  # Зеленоград
+# Получаем ключи из переменных окружения
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+CITY = 'Zelenograd, RU'
 
 # Логирование
 logging.basicConfig(
